@@ -18,7 +18,7 @@ public class PersonController {
     private PersonService personService;
 
     @GetMapping(value = "/employee/{id}")
-    public Person getPerson(@PathVariable(value = "{id}") Long id) {
+    public Person getPerson(@PathVariable("id") Long id) {
         Optional<Person> person = personService.findById(id);
         return person.orElse(null);
     }

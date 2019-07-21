@@ -17,9 +17,9 @@ public class OrganizationController {
     @Autowired
     private OrganizationService organizationService;
 
-    @GetMapping(value = "/employee/{id}")
-    public Organization getPerson(@PathVariable(value = "{id}") Long id) {
+    @GetMapping(value = "/organization/{id}")
+    public Organization getOrganization(@PathVariable("id") Long id) {
         Optional<Organization> organization = organizationService.findById(id);
-        return organization.orElse(null);
+        return organization.orElse(new Organization());
     }
 }

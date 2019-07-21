@@ -1,9 +1,11 @@
 package com.arifng.dbmultitenancy.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by rana on 27/6/19.
@@ -11,6 +13,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "persons")
+@EqualsAndHashCode(callSuper = false)
 public class Person extends BaseEntity {
     private static final long serialVersionUID = -4277100454311602070L;
 

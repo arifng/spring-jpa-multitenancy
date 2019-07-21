@@ -1,11 +1,13 @@
 package com.arifng.dbmultitenancy.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Objects;
 
 /**
  * Created by rana on 30/6/19.
@@ -14,6 +16,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "user_tenants")
+@EqualsAndHashCode(callSuper = false)
 public class UserTenant extends BaseEntity {
     private static final long serialVersionUID = 1287583108972033641L;
 

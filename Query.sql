@@ -33,17 +33,6 @@ CREATE TABLE `user_tenants` (
 
 
 -- DATA insertion
--- Database: db_default
-INSERT INTO `organizations` VALUES (NULL, 1, 'DHK, BD', 'Org_DB_default@test.com', 'Organization_BD_default');
-INSERT INTO `organizations` VALUES (NULL, 1, 'SYD, AUS', 'Org_AUS_default@test.com', 'Organization_AUS_default');
-INSERT INTO `organizations` VALUES (NULL, 1, 'STK, SE', 'Org_SE_default@test.com', 'Organization_SE_default');
-INSERT INTO `organizations` VALUES (NULL, 1, 'NY, USA', 'Org_USA_default@test.com', 'Organization_USA_default');
-
-INSERT INTO `persons` VALUES (NULL, 1, '1993-10-12', 'john@test.com', 'John','086568545','Arthur','01245865785','AB45865954');
-INSERT INTO `persons` VALUES (NULL, 1, '1999-02-28', 'arif@test.com', 'Arif','085568545','Rana','01245845785','AB45865594');
-INSERT INTO `persons` VALUES (NULL, 1, '1990-08-25', 'martin@test.com', 'Martin','086568546','Jr','01245895785','AB65865954');
-INSERT INTO `persons` VALUES (NULL, 1, '1991-04-20', 'mikhael@test.com', 'Mikhael','086568598','Jr','01245812785','AB45860004');
-
 -- Database: db_orgtest1
 INSERT INTO `organizations` VALUES (NULL, 1, 'DHK, BD', 'Org_DB1@test.com', 'Organization_BD_1');
 INSERT INTO `organizations` VALUES (NULL, 1, 'SYD, AUS', 'Org_AUS1@test.com', 'Organization_AUS_1');
@@ -65,3 +54,28 @@ INSERT INTO `persons` VALUES (NULL, 1, '1997-10-22', 'john2@test.com', 'John2','
 INSERT INTO `persons` VALUES (NULL, 1, '1995-01-17', 'arif2@test.com', 'Arif2','085568511','Rana2','01245845111','AB45865111');
 INSERT INTO `persons` VALUES (NULL, 1, '1996-12-28', 'martin2@test.com', 'Martin2','086560116','Jr2','01245895711','AB65865111');
 INSERT INTO `persons` VALUES (NULL, 1, '1996-11-29', 'mikhael2@test.com', 'Mikhael2','086563118','Jr2','01245812711','AB45869111');
+
+-- Database: db_default
+INSERT INTO `organizations` VALUES (NULL, 1, 'DHK, BD', 'Org_DB_default@test.com', 'Organization_BD_default');
+INSERT INTO `organizations` VALUES (NULL, 1, 'SYD, AUS', 'Org_AUS_default@test.com', 'Organization_AUS_default');
+INSERT INTO `organizations` VALUES (NULL, 1, 'STK, SE', 'Org_SE_default@test.com', 'Organization_SE_default');
+INSERT INTO `organizations` VALUES (NULL, 1, 'NY, USA', 'Org_USA_default@test.com', 'Organization_USA_default');
+
+INSERT INTO `persons` VALUES (NULL, 1, '1993-10-12', 'john@test.com', 'John','086568545','Arthur','01245865785','AB45865954');
+INSERT INTO `persons` VALUES (NULL, 1, '1999-02-28', 'arif@test.com', 'Arif','085568558','Rana','01245845785','AB45865594');
+INSERT INTO `persons` VALUES (NULL, 1, '1990-08-25', 'martin@test.com', 'Martin','086568546','Jr','01245895785','AB65875954');
+INSERT INTO `persons` VALUES (NULL, 1, '1991-04-20', 'mikhael@test.com', 'Mikhael','086568598','Jr','01245812785','AB45860004');
+
+INSERT INTO `db_default`.`user_tenants` VALUES
+(NULL, 1, 1, 'john@test.com' ),
+(NULL, 1, 1, 'arif@test.com' ),
+(NULL, 1, 1, 'martin@test.com' ),
+(NULL, 1, 1, 'mikhael@test.com' ),
+(NULL, 1, 2, 'john1@test.com' ),
+(NULL, 1, 2, 'arif1@test.com' ),
+(NULL, 1, 2, 'martin1@test.com' ),
+(NULL, 1, 2, 'mikhael1@test.com' ),
+(NULL, 1, 3, 'john2@test.com' ),
+(NULL, 1, 3, 'arif2@test.com' ),
+(NULL, 1, 3, 'martin2@test.com' ),
+(NULL, 1, 3, 'mikhael2@test.com' );

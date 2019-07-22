@@ -1,5 +1,7 @@
 package com.arifng.dbmultitenancy.webconfig;
 
+import com.arifng.dbmultitenancy.model.Tenant;
+import com.arifng.dbmultitenancy.repoconfig.TenantContext;
 import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -12,11 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 public class TenantIdentifierInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object hadler){
-        //your custom logic here.
+        String tenant = request.getParameter("tenant");
+        TenantContext.setTenant(Tenant.findByName(tenant));
         return true;
     }
 
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
                                 Object handler, @Nullable Exception ex) throws Exception {
+        TenantContext.clearTenant();
     }
 }

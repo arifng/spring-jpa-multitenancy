@@ -29,6 +29,17 @@ CREATE TABLE `persons` (
   CONSTRAINT `FKo2vbi1eb1prs40y2x6f0btf6m` FOREIGN KEY (`organization_id`) REFERENCES `organizations` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `users` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `version` bigint(20) DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `person_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKmvbq8q4vpi6csivw9wcnq6ho5` (`person_id`),
+  CONSTRAINT `FKmvbq8q4vpi6csivw9wcnq6ho5` FOREIGN KEY (`person_id`) REFERENCES `persons` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 
 -- CREATE TABLES in db_default only
 CREATE TABLE `user_tenants` (
@@ -52,6 +63,11 @@ INSERT INTO `persons` VALUES (NULL, 1, '1993-06-12', 'arif1@test.com', 'Arif1','
 INSERT INTO `persons` VALUES (NULL, 1, '1994-09-24', 'martin1@test.com', 'Martin1','086560046','Jr1','01245895700','AB65865959',3);
 INSERT INTO `persons` VALUES (NULL, 1, '1995-10-27', 'mikhael1@test.com', 'Mikhael1','086563998','Jr1','01245812700','AB45869004',4);
 
+INSERT INTO `users` VALUES (NULL, 1, 'john1@test.com', 'plainText', 1);
+INSERT INTO `users` VALUES (NULL, 1, 'arif1@test.com', 'plainText',2);
+INSERT INTO `users` VALUES (NULL, 1, 'martin1@test.com', 'plainText',3);
+INSERT INTO `users` VALUES (NULL, 1, 'mikhael1@test.com', 'plainText',4);
+
 -- Database: db_orgtest2
 INSERT INTO `organizations` VALUES (NULL, 1, 'DHK, BD', 'Org_DB2@test.com', 'Organization_BD_2');
 INSERT INTO `organizations` VALUES (NULL, 1, 'SYD, AUS', 'Org_AUS2@test.com', 'Organization_AUS_2');
@@ -63,6 +79,11 @@ INSERT INTO `persons` VALUES (NULL, 1, '1995-01-17', 'arif2@test.com', 'Arif2','
 INSERT INTO `persons` VALUES (NULL, 1, '1996-12-28', 'martin2@test.com', 'Martin2','086560116','Jr2','01245895711','AB65865111',3);
 INSERT INTO `persons` VALUES (NULL, 1, '1996-11-29', 'mikhael2@test.com', 'Mikhael2','086563118','Jr2','01245812711','AB45869111',4);
 
+INSERT INTO `users` VALUES (NULL, 1, 'john2@test.com', 'plainText', 1);
+INSERT INTO `users` VALUES (NULL, 1, 'arif2@test.com', 'plainText',2);
+INSERT INTO `users` VALUES (NULL, 1, 'martin2@test.com', 'plainText',3);
+INSERT INTO `users` VALUES (NULL, 1, 'mikhael2@test.com', 'plainText',4);
+
 -- Database: db_default
 INSERT INTO `organizations` VALUES (NULL, 1, 'DHK, BD', 'Org_DB_default@test.com', 'Organization_BD_default');
 INSERT INTO `organizations` VALUES (NULL, 1, 'SYD, AUS', 'Org_AUS_default@test.com', 'Organization_AUS_default');
@@ -73,6 +94,11 @@ INSERT INTO `persons` VALUES (NULL, 1, '1993-10-12', 'john@test.com', 'John','08
 INSERT INTO `persons` VALUES (NULL, 1, '1999-02-28', 'arif@test.com', 'Arif','085568558','Rana','01245845785','AB45865594', 2);
 INSERT INTO `persons` VALUES (NULL, 1, '1990-08-25', 'martin@test.com', 'Martin','086568546','Jr','01245895785','AB65875954', 3);
 INSERT INTO `persons` VALUES (NULL, 1, '1991-04-20', 'mikhael@test.com', 'Mikhael','086568598','Jr','01245812785','AB45860004', 4);
+
+INSERT INTO `users` VALUES (NULL, 1, 'john@test.com', 'plainText', 1);
+INSERT INTO `users` VALUES (NULL, 1, 'arif@test.com', 'plainText',2);
+INSERT INTO `users` VALUES (NULL, 1, 'martin@test.com', 'plainText',3);
+INSERT INTO `users` VALUES (NULL, 1, 'mikhael@test.com', 'plainText',4);
 
 INSERT INTO `db_default`.`user_tenants` VALUES
 (NULL, 1, 1, 'john@test.com' ),

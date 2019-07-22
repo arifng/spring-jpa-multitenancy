@@ -1,6 +1,6 @@
 package com.arifng.dbmultitenancy.support;
 
-import com.arifng.dbmultitenancy.config.TenantContext;
+import com.arifng.dbmultitenancy.repoconfig.TenantContext;
 import com.arifng.dbmultitenancy.model.Tenant;
 
 /**

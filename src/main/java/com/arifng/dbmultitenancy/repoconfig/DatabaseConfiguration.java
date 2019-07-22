@@ -1,4 +1,4 @@
-package com.arifng.dbmultitenancy.config;
+package com.arifng.dbmultitenancy.repoconfig;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;

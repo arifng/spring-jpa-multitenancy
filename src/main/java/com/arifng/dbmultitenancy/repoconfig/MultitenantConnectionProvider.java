@@ -1,4 +1,4 @@
-package com.arifng.dbmultitenancy.config;
+package com.arifng.dbmultitenancy.repoconfig;
 
 import com.arifng.dbmultitenancy.model.Tenant;
 import org.hibernate.engine.jdbc.connections.spi.AbstractDataSourceBasedMultiTenantConnectionProviderImpl;

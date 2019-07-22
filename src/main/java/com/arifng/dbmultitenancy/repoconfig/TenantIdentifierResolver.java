@@ -1,4 +1,4 @@
-package com.arifng.dbmultitenancy.config;
+package com.arifng.dbmultitenancy.repoconfig;
 
 import org.hibernate.context.spi.CurrentTenantIdentifierResolver;
 

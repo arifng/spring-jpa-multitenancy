@@ -79,7 +79,7 @@ public class RepositoryConfiguration {
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.setProperty(AvailableSettings.HBM2DDL_AUTO, "create");
+        properties.setProperty(AvailableSettings.HBM2DDL_AUTO, "none");
         properties.setProperty(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL57InnoDBDialect");
         properties.setProperty(AvailableSettings.IGNORE_EXPLICIT_DISCRIMINATOR_COLUMNS_FOR_JOINED_SUBCLASS, "true");
         properties.setProperty("hibernate.jpa.compliance.transaction", "true");

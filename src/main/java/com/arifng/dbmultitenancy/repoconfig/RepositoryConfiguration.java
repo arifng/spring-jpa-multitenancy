@@ -5,6 +5,7 @@ import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -33,6 +34,7 @@ public class RepositoryConfiguration {
     }
 
     @Bean
+    @DependsOn(value = "flywayMigrationInitializer")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setPackagesToScan(BaseEntity.class.getPackage().getName());
@@ -72,6 +74,11 @@ public class RepositoryConfiguration {
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
+    }
+
+    @Bean(initMethod = "migrate")
+    public FlywayMigrationInitializer flywayMigrationInitializer() {
+        return new FlywayMigrationInitializer();
     }
 
     private Properties hibernateProperties() {
